@@ -1,0 +1,1 @@
+# Project to exercise for interviews
