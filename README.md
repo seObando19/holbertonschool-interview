@@ -1,1 +1,1 @@
-# Project to exercise for interviews
+# holbertonschool-interview

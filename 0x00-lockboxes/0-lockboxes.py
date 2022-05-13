@@ -1,24 +1,17 @@
 #!/usr/bin/python3
-""" You have n number of locked boxes in front of you.
-Each box is numbered sequentially from 0 to n - 1 and
-each box may contain keys to the other boxes. """
+"""0. Lockboxes"""
 
 
 def canUnlockAll(boxes):
-    """ Unlock boxes """
-
-    if type(boxes) is not list:
-        return False
-
-    if len(boxes) == 0:
-        return False
-
-    unlock = [0]
-    for key in unlock:
-        for element in boxes[key]:
-            if element not in unlock and element < len(boxes):
-                unlock.append(element)
-
-    if len(unlock) == len(boxes):
-        return True
-    return False
+    """ Function to know if all the boxes can be unlocked"""
+    keys = set()
+    for next_key, box in enumerate(boxes):
+        next_key += 1
+        for key in box:
+            if key < len(boxes):
+                keys.add(key)
+                keys.update(boxes[key])
+            if len(keys) == len(boxes) or len(keys) == len(boxes) - 1:
+                return True
+        if next_key not in keys:
+            return False

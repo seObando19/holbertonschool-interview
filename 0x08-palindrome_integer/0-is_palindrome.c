@@ -1,27 +1,21 @@
 #include "palindrome.h"
-
 /**
- * is_palindrome - Check if an integer is palindrome.
- *
- * @n: Number to check
- * Return: 1 if number is palindrome, 0 if not.
+ * is_palindrome - checks integer is a palindrome
+ * @n: number to be checked
+ * Return: 1 if n is a palindrome, otherwise 0
  */
 int is_palindrome(unsigned long n)
 {
-	char buffer[32];
-	int len = 0, start = 0;
+	unsigned long rem, num, rev = 0;
+	num = n;
 
-	sprintf(buffer, "%lu", n);
-	while (buffer[len])
-		len++;
-
-	len = len - 1;
-	while (start < len)
+	while (n > 0)
 	{
-		if (buffer[start] != buffer[len])
-			return (0);
-		start++;
-		len--;
+		rem = n % 10;
+		rev = rev * 10 + rem;
+		n = n / 10;
 	}
-	return (1);
+	if (rev == num)
+		return (1);
+	return (0);
 }

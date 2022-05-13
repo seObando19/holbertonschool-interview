@@ -3,8 +3,9 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
+
 
 int is_palindrome(unsigned long n);
 
-#endif /*PALINDROME_H*/
+#endif /* PALINDROME_H */

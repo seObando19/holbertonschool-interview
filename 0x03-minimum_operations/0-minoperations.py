@@ -1,22 +1,14 @@
 #!/usr/bin/python3
-""" Minimum Operations """
+"""documentation"""
+import math
 
 
 def minOperations(n):
-    """Calculates minimum copy all and paste operations to reach n characters
-    Args:
-        n: characters to reach
-    Returns:
-        minimum needed operations
-    """
-    sum = 0
-    i = 2
-    while i <= n:
-        if n % i:
-            i += 1
-        else:
-            n = n / i
-            sum += i
+    """documentation"""
+    res = 0
     if n > 1:
-        sum += n
-    return sum
+        for i in range(2, int(math.sqrt(n) + 1)):
+            while n % i == 0:
+                res += i
+                n //= i
+    return res + n if n > 1 else res

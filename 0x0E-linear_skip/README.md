@@ -1,1 +1,1 @@
-# 0x0E-linear_skip
+## 0x0E. Linear search in skip list
